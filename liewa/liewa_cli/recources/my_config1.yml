@@ -1,0 +1,11 @@
+planets:
+  gk2a:
+    color: geocolor
+    size: 1300
+    x: 1100
+    y: 650
+settings:
+  background-image: cb6be5663982cdd0b307a7d17d3be5f9.jpg
+  bg-color: '#000000'
+  height: 1080
+  width: 1920

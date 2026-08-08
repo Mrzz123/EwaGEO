@@ -1,0 +1,11 @@
+settings:
+  width: 2560
+  height: 1440
+  bg-color: "#000000"
+
+planets:
+  gk2a:
+    x: 1800
+    y: 2000
+    size: 4267
+    color: geocolor

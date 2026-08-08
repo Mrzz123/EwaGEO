@@ -1,0 +1,19 @@
+planets:
+  gk2a:
+    x: 1800
+    y: 2000
+    size: 4267
+    color: natural_color
+    location:
+      continent: asia
+      country: CN
+      subdivision: '2268'
+      name: Liaoning
+      latitude: 41.237411
+      longitude: 122.995547
+settings:
+  bg-color: '#000000'
+  height: 1440
+  width: 2560
+  show-image-info: true
+  background-image: cb6be5663982cdd0b307a7d17d3be5f9.jpg

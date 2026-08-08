@@ -1,0 +1,11 @@
+settings:
+  width: 1920
+  height: 1080
+  bg-color: '#000000'
+  background-image: cb6be5663982cdd0b307a7d17d3be5f9.jpg
+  show-image-info: false
+planets:
+  fy4b:
+    x: 975
+    y: 540
+    size: 1050

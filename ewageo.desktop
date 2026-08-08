@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=EwaGEO
+Comment=Near-real-time Earth wallpapers from geostationary satellites
+Path=/opt/ewageo
+Exec=/opt/ewageo/EwaGEO
+Icon=ewageo
+Terminal=false
+Categories=Utility;Graphics;

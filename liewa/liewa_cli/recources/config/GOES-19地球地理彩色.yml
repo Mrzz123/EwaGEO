@@ -1,0 +1,12 @@
+planets:
+  goes-19:
+    x: 1300
+    y: 720
+    size: 1400
+    color: geocolor
+settings:
+  bg-color: '#000000'
+  height: 1440
+  width: 2560
+  show-image-info: true
+  background-image: cb6be5663982cdd0b307a7d17d3be5f9.jpg

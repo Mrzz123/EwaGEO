@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry"><rect><x>0</x><y>0</y><width>840</width><height>920</height></rect></property>
+  <property name="minimumSize"><size><width>720</width><height>720</height></size></property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="root_layout">
+    <item>
+     <layout class="QHBoxLayout" name="header_layout">
+      <item><widget class="QLabel" name="app_title_label"><property name="text"><string>EwaGEO</string></property></widget></item>
+      <item><spacer name="header_spacer"><property name="orientation"><enum>Qt::Horizontal</enum></property><property name="sizeHint"><size><width>40</width><height>20</height></size></property></spacer></item>
+      <item><widget class="QCheckBox" name="startup_checkbox"><property name="text"><string>Start with Windows</string></property></widget></item>
+      <item><widget class="QLabel" name="language_label"><property name="text"><string>Language</string></property></widget></item>
+      <item><widget class="QComboBox" name="language_combo"><item><property name="text"><string>中文</string></property></item><item><property name="text"><string>English</string></property></item></widget></item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <widget class="QWidget" name="wallpaper_tab">
+       <attribute name="title"><string>Wallpaper</string></attribute>
+       <layout class="QVBoxLayout" name="wallpaper_tab_layout">
+        <property name="leftMargin"><number>0</number></property>
+        <property name="topMargin"><number>0</number></property>
+        <property name="rightMargin"><number>0</number></property>
+        <property name="bottomMargin"><number>0</number></property>
+        <item><widget class="QScrollArea" name="wallpaper_scroll_area">
+         <property name="frameShape"><enum>QFrame::NoFrame</enum></property>
+         <property name="horizontalScrollBarPolicy"><enum>Qt::ScrollBarAlwaysOff</enum></property>
+         <property name="widgetResizable"><bool>true</bool></property>
+         <widget class="QWidget" name="image_compostion">
+          <layout class="QVBoxLayout" name="image_layout">
+        <item>
+         <widget class="QGroupBox" name="canvas_group">
+          <property name="title"><string>Canvas</string></property>
+          <layout class="QGridLayout" name="canvas_layout">
+           <item row="0" column="0"><widget class="QLabel" name="canvas_size"><property name="text"><string>Resolution</string></property></widget></item>
+           <item row="0" column="1"><widget class="QComboBox" name="size_dropdown"/></item>
+           <item row="0" column="2"><widget class="QCheckBox" name="custom_size_checkbox"><property name="text"><string>Custom resolution</string></property></widget></item>
+           <item row="1" column="0"><widget class="QLabel" name="x_label"><property name="text"><string>Width</string></property></widget></item>
+           <item row="1" column="1"><widget class="QSpinBox" name="x_value_input"><property name="minimum"><number>1</number></property><property name="maximum"><number>9999</number></property></widget></item>
+           <item row="1" column="2"><widget class="QLabel" name="y_label"><property name="text"><string>Height</string></property></widget></item>
+           <item row="1" column="3"><widget class="QSpinBox" name="y_value_input"><property name="minimum"><number>1</number></property><property name="maximum"><number>9999</number></property></widget></item>
+           <item row="2" column="0" colspan="4"><widget class="QLabel" name="size_error_label"><property name="text"><string>Invalid size</string></property></widget></item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="background_group">
+          <property name="title"><string>Background</string></property>
+          <layout class="QGridLayout" name="background_layout">
+           <item row="0" column="0"><widget class="QLabel" name="background_color"><property name="text"><string>Solid color</string></property></widget></item>
+           <item row="0" column="1"><widget class="QPushButton" name="choose_color_btn"><property name="text"><string>Choose</string></property></widget></item>
+           <item row="0" column="2"><widget class="QLabel" name="choosen_color_label"/></item>
+           <item row="1" column="0"><widget class="QCheckBox" name="background_img_checkbox"><property name="text"><string>Use background image</string></property></widget></item>
+           <item row="1" column="1" colspan="2"><widget class="QPushButton" name="browse_bg_file_btn"><property name="text"><string>Choose background image</string></property></widget></item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="planet_group">
+          <property name="title"><string>Satellite source</string></property>
+          <layout class="QVBoxLayout" name="planet_layout">
+           <item><layout class="QGridLayout" name="satellite_grid">
+            <item row="0" column="0"><widget class="QLabel" name="satellite_label"><property name="text"><string>Satellite</string></property></widget></item>
+            <item row="0" column="1"><widget class="QRadioButton" name="fy4b_radio"><property name="text"><string>FY-4B (China)</string></property></widget></item>
+            <item row="0" column="2"><widget class="QRadioButton" name="gk2a_radio"><property name="text"><string>GK-2A (South Korea)</string></property></widget></item>
+            <item row="0" column="3"><widget class="QRadioButton" name="himawari_radio"><property name="text"><string>Himawari</string></property></widget></item>
+            <item row="1" column="1"><widget class="QRadioButton" name="goes18_radio"><property name="text"><string>GOES-18</string></property></widget></item>
+            <item row="1" column="2"><widget class="QRadioButton" name="goes19_radio"><property name="text"><string>GOES-19</string></property></widget></item>
+           </layout></item>
+           <item><layout class="QHBoxLayout" name="color_row">
+            <item><widget class="QLabel" name="color_label"><property name="text"><string>Color mode</string></property></widget></item>
+            <item><widget class="QRadioButton" name="natural_color_radio"><property name="text"><string>Natural color (recommended for daytime)</string></property></widget></item>
+            <item><widget class="QRadioButton" name="geocolor_radio"><property name="text"><string>GeoColor (recommended for nighttime)</string></property></widget></item>
+            <item><widget class="QRadioButton" name="adaptive_color_radio"><property name="text"><string>Automatic day / night mode switching</string></property></widget></item>
+            <item><widget class="QRadioButton" name="fy4b_color_radio"><property name="text"><string>True color</string></property></widget></item>
+           </layout></item>
+           <item>
+            <widget class="QWidget" name="location_widget" native="true">
+             <layout class="QVBoxLayout" name="location_layout">
+              <property name="leftMargin"><number>0</number></property>
+              <property name="topMargin"><number>0</number></property>
+              <property name="rightMargin"><number>0</number></property>
+              <property name="bottomMargin"><number>0</number></property>
+              <item><widget class="QLabel" name="location_hint_label"><property name="text"><string>Sunrise and sunset are calculated from the selected state/province's representative coordinates</string></property></widget></item>
+              <item><layout class="QHBoxLayout" name="location_selector_layout">
+               <item><widget class="QLabel" name="continent_label"><property name="text"><string>Continent</string></property></widget></item>
+               <item><widget class="QComboBox" name="continent_combo"><property name="minimumSize"><size><width>120</width><height>0</height></size></property><property name="maximumSize"><size><width>150</width><height>16777215</height></size></property></widget></item>
+               <item><widget class="QLabel" name="country_label"><property name="text"><string>Country</string></property></widget></item>
+               <item><widget class="QComboBox" name="country_combo"><property name="minimumSize"><size><width>150</width><height>0</height></size></property><property name="maximumSize"><size><width>180</width><height>16777215</height></size></property></widget></item>
+               <item><widget class="QLabel" name="subdivision_label"><property name="text"><string>State / Province</string></property></widget></item>
+               <item><widget class="QComboBox" name="subdivision_combo"><property name="minimumSize"><size><width>170</width><height>0</height></size></property><property name="maximumSize"><size><width>220</width><height>16777215</height></size></property></widget></item>
+               <item><spacer name="location_selector_spacer"><property name="orientation"><enum>Qt::Horizontal</enum></property><property name="sizeHint" stdset="0"><size><width>40</width><height>20</height></size></property></spacer></item>
+              </layout></item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="preset_group">
+          <property name="title"><string>Layout preset</string></property>
+          <layout class="QHBoxLayout" name="preset_layout">
+           <item><layout class="QVBoxLayout" name="preset_controls_layout">
+            <item><widget class="QRadioButton" name="earth_preset_radio"><property name="text"><string>Earth</string></property></widget></item>
+            <item><widget class="QRadioButton" name="china_preset_radio"><property name="text"><string>China region</string></property></widget></item>
+            <item><widget class="QRadioButton" name="custom_preset_radio"><property name="text"><string>Custom</string></property></widget></item>
+            <item><widget class="QWidget" name="custom_controls_widget" native="true"><layout class="QFormLayout" name="custom_controls_layout">
+             <item row="0" column="0"><widget class="QLabel" name="custom_x_label"><property name="text"><string>Position X</string></property></widget></item>
+             <item row="0" column="1"><widget class="QSpinBox" name="custom_x_input"><property name="minimum"><number>-9999</number></property><property name="maximum"><number>9999</number></property></widget></item>
+             <item row="1" column="0"><widget class="QLabel" name="custom_y_label"><property name="text"><string>Position Y</string></property></widget></item>
+             <item row="1" column="1"><widget class="QSpinBox" name="custom_y_input"><property name="minimum"><number>-9999</number></property><property name="maximum"><number>9999</number></property></widget></item>
+             <item row="2" column="0"><widget class="QLabel" name="custom_planet_size_label"><property name="text"><string>Size</string></property></widget></item>
+             <item row="2" column="1"><widget class="QSpinBox" name="custom_planet_size_input"><property name="minimum"><number>1</number></property><property name="maximum"><number>9999</number></property></widget></item>
+            </layout></widget></item>
+           </layout></item>
+           <item><layout class="QVBoxLayout" name="preset_preview_layout">
+            <item><widget class="QLabel" name="preset_thumbnail_label"><property name="minimumSize"><size><width>320</width><height>180</height></size></property><property name="maximumSize"><size><width>320</width><height>180</height></size></property><property name="frameShape"><enum>QFrame::StyledPanel</enum></property><property name="text"><string/></property></widget></item>
+            <item><widget class="QCheckBox" name="show_image_info_checkbox"><property name="text"><string>Show image source and time</string></property></widget></item>
+           </layout></item>
+          </layout>
+         </widget>
+        </item>
+        <item><layout class="QHBoxLayout" name="config_actions_layout">
+         <item><widget class="QCheckBox" name="custom_config_checkbox"><property name="visible"><bool>false</bool></property><property name="text"><string>Custom config</string></property></widget></item>
+         <item><widget class="QPushButton" name="browse_config_btn"><property name="text"><string>Import configuration</string></property></widget></item>
+         <item><widget class="QPushButton" name="save_yml_btn"><property name="text"><string>Export configuration</string></property></widget></item>
+         <item><widget class="QPushButton" name="export_wallpaper_btn"><property name="text"><string>Export current wallpaper</string></property></widget></item>
+         <item><widget class="QLabel" name="save_feedback_label"><property name="text"><string/></property></widget></item>
+          <item><widget class="QDialogButtonBox" name="dialog_buttons"><property name="standardButtons"><set>QDialogButtonBox::Apply|QDialogButtonBox::Cancel</set></property></widget></item>
+         </layout></item>
+         <item><widget class="QGroupBox" name="manage_group"><property name="title"><string>Update actions</string></property><layout class="QGridLayout" name="manage_layout">
+          <item row="0" column="0" colspan="3"><widget class="QLabel" name="scheduler_description"><property name="text"><string>Automatic update settings</string></property><property name="wordWrap"><bool>true</bool></property></widget></item>
+          <item row="1" column="0" colspan="3"><widget class="QPushButton" name="test_now_btn"><property name="text"><string>Apply now</string></property></widget></item>
+          <item row="2" column="0"><widget class="QLabel" name="interval_label"><property name="text"><string>Interval</string></property></widget></item>
+          <item row="2" column="1"><widget class="QSpinBox" name="interval_input"><property name="minimum"><number>5</number></property><property name="maximum"><number>720</number></property><property name="value"><number>10</number></property></widget></item>
+          <item row="2" column="2"><widget class="QLabel" name="interval_unit_label"><property name="text"><string>minutes</string></property></widget></item>
+          <item row="3" column="0" colspan="3"><widget class="QPushButton" name="create_schedueler_btn"><property name="text"><string>Enable automatic task</string></property></widget></item>
+          <item row="4" column="0" colspan="3"><widget class="QPushButton" name="delete_scheduler_btn"><property name="text"><string>Disable automatic updates</string></property></widget></item>
+         </layout></widget></item>
+          </layout>
+         </widget>
+        </widget></item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="scheduler_tab">
+       <attribute name="title"><string>Automatic updates</string></attribute>
+       <layout class="QVBoxLayout" name="scheduler_layout">
+        <item><widget class="QGroupBox" name="status_group"><property name="title"><string>Status</string></property><layout class="QVBoxLayout" name="status_layout">
+         <item><layout class="QHBoxLayout" name="status_row">
+          <item><widget class="QLabel" name="status_label_color"><property name="text"><string/></property></widget></item>
+          <item><widget class="QLabel" name="status_label_text"><property name="text"><string>Status</string></property></widget></item>
+          <item><widget class="QPushButton" name="reload_status_btn"><property name="text"><string/></property></widget></item>
+         </layout></item>
+         <item><widget class="QTextEdit" name="status_output"><property name="readOnly"><bool>true</bool></property></widget></item>
+        </layout></widget></item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+    <item><widget class="QDialogButtonBox" name="close_btn"><property name="standardButtons"><set>QDialogButtonBox::Close</set></property></widget></item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,9 @@
+include LICENSE
+include NOTICE.md
+include THIRD_PARTY_NOTICES.md
+include ASSET_SOURCES.md
+include ACKNOWLEDGEMENTS.md
+recursive-include liewa/liewa_cli/recources *
+include liewa/liewa_cli/liewa-cli
+include liewa/liewa_gui/liewa-gui
+include liewa/liewa_gui/icon.png
